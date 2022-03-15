@@ -1,41 +1,36 @@
 version: "3"
 services:
   backend:
-    container_name: api-nodejs
+    container_name: back-nodejs
     # to build an image based on Dockerfile
     # it looks in this folder to find Dockerfile to build an image
     build: ./node-app
     ports:
       - 8800:8800 # Nous exposons le port 8800
-    volumes:
-      - ./:/usr/src/app # Le volume du WORKDIR
-      - /usr/src/app/node_modules
     depends_on:
       - mongo
 
 
   frontend:
+    container_name: front-reactjs
     # to build an image based on Dockerfile
     # it looks in this folder to find Dockerfile to build an image
     build: ./react-app
-
     # the port that we want to publish for frontend
     ports:
-      - "3000:3000"
+      - 3000:3000
     # add bind mount volume to keep have updated source code
     volumes:
       - ./react-app/src:/app/src
-
     # # it will start our frontend container once backend-container is  up and running.
     depends_on:
       - backend
 
   mongo:
     image: mongo:3.6
+    container_name: db-mongo
     volumes:
       - mongo-storage:/data/db # Nous pouvons ajouter un volume à ce container afin de stocker les données de la base
-    expose:
-      - 27017
     ports:
       - 27017:27017
 
