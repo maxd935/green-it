@@ -1,19 +1,17 @@
 version: "3"
 services:
-  # backend:
-  #   container_name: api-nodejs
-  #   # to build an image based on Dockerfile
-  #   # it looks in this folder to find Dockerfile to build an image
-  #   build: ./backend
-  #   ports:
-  #     - 8800:8800 # Nous exposons le port 8800
-  #   volumes:
-  #     - ./:/usr/src/app # Le volume du WORKDIR
-  #     - /usr/src/app/node_modules
-  #   environment:
-  #     - PORT=8800 # Nous pouvons définir ici plusieurs variables d'environnement
-  #   depends_on:
-  #     - mongo
+  backend:
+    container_name: api-nodejs
+    # to build an image based on Dockerfile
+    # it looks in this folder to find Dockerfile to build an image
+    build: ./node-app
+    ports:
+      - 8800:8800 # Nous exposons le port 8800
+    volumes:
+      - ./:/usr/src/app # Le volume du WORKDIR
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
 
 
   frontend:
@@ -27,13 +25,10 @@ services:
     # add bind mount volume to keep have updated source code
     volumes:
       - ./react-app/src:/app/src
-    # allow interactive mode
-    stdin_open: true
-    tty: true
 
     # # it will start our frontend container once backend-container is  up and running.
-    # depends_on:
-    #   - backend
+    depends_on:
+      - backend
 
   mongo:
     image: mongo:3.6
