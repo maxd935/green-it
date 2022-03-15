@@ -3,7 +3,7 @@ const cors = require("cors");
 //require("./lib/mongo");
 
 const app = express();
-const PORT = 6000;
+const PORT = 8800;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
