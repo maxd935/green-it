@@ -1,0 +1,50 @@
+{
+  "Paris" : [
+  {
+    "Accès aux interfaces numériques" : "63,64",
+    "Accès à l'information" : "48,55",
+    "Compétences administratives" : "37,12",
+    "Capacité d'usage des interfaces numériques" : "26,08",
+    "Score de fragilité" : "43,84"
+  }
+],
+  "Bobigny" : [
+    {
+      "Accès aux interfaces numériques" : "57,46",
+      "Accès à l'information" : "74,55",
+      "Compétences administratives" : "55,12",
+      "Capacité d'usage des interfaces numériques" : "23,51",
+      "Score de fragilité" : "52,66"
+    }
+  ],
+
+  "Créteil" : [
+    {
+      "Accès aux interfaces numériques" : "74,16",
+      "Accès à l'information" : "38,97",
+      "Compétences administratives" : "83,29",
+      "Capacité d'usage des interfaces numériques" : "51,73",
+      "Score de fragilité" : "52,17"
+    }
+  ],
+
+  "Nanterre" : [
+    {
+      "Accès aux interfaces numériques" : "84,45",
+      "Accès à l'information" : "60,13",
+      "Compétences administratives" : "51,94",
+      "Capacité d'usage des interfaces numériques" : "63,89",
+      "Score de fragilité" : "65,10"
+    }
+  ],
+
+  "Versailles" : [
+    {
+      "Accès aux interfaces numériques" : "45,56",
+      "Accès à l'information" : "98,10",
+      "Compétences administratives" : "47,33",
+      "Capacité d'usage des interfaces numériques" : "43,09",
+      "Score de fragilité" : "58,49"
+    }
+  ]
+}
