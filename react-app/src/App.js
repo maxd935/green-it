@@ -1,12 +1,7 @@
 import './App.css';
 import data from './data/data.json';
+import Data from './components/Data'
 import React, {useState} from "react";
-
-const parisStats = data.Paris;
-const bobigny = data.Bobigny;
-const creteil = data.Créteil;
-const nanterre = data.Nanterre;
-const versailles = data.Versailles;
 
 
 
@@ -24,6 +19,9 @@ function App() {
         />
       </form>
       <p>{city}</p>
+      <Data/>
+
+
     </div>
 
 
