@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './components/Footer'
+import Graph from "./components/Graph";
+import Dropdown from "./components/Dropdown";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>Indice de fragilité numérique</h1>
+      <Dropdown/>
+      <Graph/>
+      <Footer/>
     </div>
+
+
+
+
+
   );
+
+
+
 }
 
 export default App;
