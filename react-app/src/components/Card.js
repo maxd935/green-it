@@ -2,7 +2,7 @@ import React from 'react';
 
 function Card  (data)  {
     return (
-        <div style={{ height: '250px', width: '50%', border: '1px solid black',marginRight: '10px', float: 'left'}}>
+        <div style={{ height: '250px', width: '50%', border: '1px solid black',margin: '10px', padding:'10px', float: 'left'}}>
             <h3>Ville : {data.data.Ville}</h3>
             <p>Accès aux interfaces numériques : {data.data.interfaceNum}</p>
             <p>Accès à l'information : {data.data.accesInformation}</p>
