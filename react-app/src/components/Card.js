@@ -2,8 +2,8 @@ import React from 'react';
 
 function Card  (data)  {
     return (
-        <div style={{ height: '250px', width: '50%', border: '1px solid black',margin: '10px', padding:'10px', float: 'left'}}>
-            <h3>Ville : {data.data.Ville}</h3>
+        <div style={{ height: '250px', width: '50%', border: '1px solid black',margin: '10px', padding:'10px'}}>
+            <h3>{data.data.Ville}</h3>
             <p>Accès aux interfaces numériques : {data.data.interfaceNum}</p>
             <p>Accès à l'information : {data.data.accesInformation}</p>
             <p>Compétences administratives : {data.data.competencesAdmin}</p>
