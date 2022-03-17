@@ -52,25 +52,35 @@ function buildJSON(fileCSV, fileJSON, newColumJSON, addColumnCSV, columnCSVmappi
           }
           // Mapping données
           resJSON = dataJSON.map(elementJSON => {
-            resCSV = resultsCSV.find(elementCSV => elementCSV[columnCSVmapping] == elementJSON[columnJSONmapping]) 
-              if (!resCSV || resCSV[addColumnCSV] === "") elementJSON[newColumJSON]=0
-              else elementJSON[newColumJSON]=resCSV[addColumnCSV]
+            resCSV = resultsCSV.find(elementCSV => elementCSV[columnCSVmapping] == elementJSON[columnJSONmapping])
+              if (!resCSV) {
+                elementJSON[newColumJSON]=0
+              }
+              else if ( resCSV[addColumnCSV] == "") {
+                elementJSON[newColumJSON]=0
+              }
+              else 
+              {
+                elementJSON[newColumJSON]=resCSV[addColumnCSV]
+              }
               return elementJSON;
           });
           const jsonString = JSON.stringify(resJSON)
           
           // Ecriture des données
-          fs.writeFile('./db.json', jsonString, err => {
+          fs.writeFile(fileJSON, jsonString, err => {
               if (err) {
                 console.log('Error writing file', err)
               } else {
                 console.log('Successfully wrote file')
+                const jsonData= require(fileJSON); 
+                console.log(jsonData);
               }
           })
         });
     });
 }
 
-buildJSON('csv/region_taux_pauvreté.csv', 'db.json', 'TAUX_PAUVRETE_REG', 'TP6016', 'CODGEO', 'REG')
-// buildJSON('csv/Departement_taux_pauvreté.csv', './moyenne2.json', 'TAUX_PAUVRETE_DEP', 'TP6016', 'CODGEO', 'DEP')
-// buildJSON('csv/Commune_taux_pauvreté.csv', './moyenne2.json', 'TAUX_PAUVRETE_COM', 'TP6016', 'CODGEO', 'COM')
+// buildJSON('csv/region_taux_pauvreté.csv', './json/moyenne3.json', 'TAUX_PAUVRETE_REG', 'TP6016', 'CODGEO', 'REG')
+// buildJSON('csv/Departement_taux_pauvreté.csv', './json/moyenne3.json', 'TAUX_PAUVRETE_DEP', 'TP6016', 'CODGEO', 'DEP')
+ buildJSON('csv/Commune_taux_pauvreté.csv', './json/moyenne3.json', 'TAUX_PAUVRETE_COM', 'TP6016', 'CODGEO', 'COM')
