@@ -1,13 +1,12 @@
-import React  from 'react';
-import data from '../data/data.json';
+import React, {useState,useEffect}  from 'react';
 import Card from '../components/Card'
 
-function Data ()  {
-
+function Data ({datas})  {
+    console.log("datas ", datas)
         return (
             <div style={{width: '100%'}}>
                 {
-                    data.map(
+                    datas.map(
                         (city,k)=>{
                             return <Card key={k} data={city}/>
                         }
