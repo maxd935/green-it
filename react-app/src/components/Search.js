@@ -123,7 +123,7 @@ class Autocomplete extends Component {
                     </div>
                 );
             }
-        };
+        }
 
         return (
             <Fragment>

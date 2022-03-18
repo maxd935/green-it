@@ -1,4 +1,4 @@
-import React, {useState,useEffect}  from 'react';
+import React from 'react';
 import Card from '../components/Card'
 
 function Data ({datas})  {
@@ -19,6 +19,6 @@ function Data ({datas})  {
 
         );
 
-};
+}
 
 export default Data;
