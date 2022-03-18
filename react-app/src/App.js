@@ -8,7 +8,7 @@ import cities from './data/cities.json'
 
 function App() {
   const [datas, setDatas] = useState([])
-  const [word, setWord] = useState("")
+  const [word, setWord] = useState("");
 
   /*useEffect(() => {
     setDatas((data))
@@ -52,13 +52,7 @@ function App() {
 
             </div>
             <Autocomplete
-                suggestions={[
-                    "Paris",
-                    "Bobigny",
-                    "Créteil",
-                    "Nanterre",
-                    "Versailles",
-                ]}
+                suggestions={cities}
                 onSearch={(v) => handleSearch(v)}
             />
             <Data datas={datas} />
