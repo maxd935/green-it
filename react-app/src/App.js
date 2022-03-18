@@ -1,14 +1,14 @@
 import './App.css';
 import Autocomplete from "./components/Search";
 import data from "./data/data.json";
-import React, {useState , useEffect} from "react";
+import React, {useState} from "react";
 import Data from './components/Data';
 import cities from './data/cities.json'
 
 
 function App() {
   const [datas, setDatas] = useState([])
-  const [word, setWord] = useState("");
+  //const [word, setWord] = useState("");
 
   /*useEffect(() => {
     setDatas((data))
