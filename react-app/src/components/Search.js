@@ -119,21 +119,24 @@ class Autocomplete extends Component {
             } else {
                 suggestionsListComponent = (
                     <div className="no-suggestions">
-                        <em>No suggestions, you're on your own!</em>
+                       <span><em style={{color: "red"}}>La commune que vous cherchez n'existe pas</em></span>
                     </div>
                 );
             }
-        }
+        };
 
         return (
             <Fragment>
                 <div>
-                    <input
-                        type="text"
-                        onChange={onChange}
-                        onKeyDown={onKeyDown}
-                        value={userInput}
-                    />
+                    <label>
+                        <input
+                            aria-label="input"
+                            type="text"
+                            onChange={onChange}
+                            onKeyDown={onKeyDown}
+                            value={userInput}
+                        />
+                    </label>
                     <button
                         onClick={() => this.props.onSearch(userInput)}
                         style={{marginLeft: '10px',height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}>Search</button>

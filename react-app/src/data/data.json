@@ -5,7 +5,10 @@
     "accesInformation" : "48,55",
     "competencesAdmin" : "37,12",
     "usageInterfaceNum" : "26,08",
-    "scoreFragilite" : "43,84"
+    "scoreFragilite" : "43,84",
+    "scoreFragiliteDepartement" : "56,98",
+    "scoreFragiliteRegion" : "47,10",
+    "codePostal" : "75000"
   },
 
 
@@ -15,7 +18,10 @@
       "accesInformation" : "74,55",
       "competencesAdmin" : "55,12",
       "usageInterfaceNum" : "23,51",
-      "scoreFragilite" : "52,66"
+      "scoreFragilite" : "52,66",
+      "scoreFragiliteDepartement" : "42,76",
+      "scoreFragiliteRegion" : "40,50",
+      "codePostal" : "93022"
     },
 
 
@@ -26,7 +32,10 @@
       "accesInformation" : "38,97",
       "competencesAdmin" : "83,29",
       "usageInterfaceNum" : "51,73",
-      "scoreFragilite" : "52,17"
+      "scoreFragilite" : "52,17",
+      "scoreFragiliteDepartement" : "66,43",
+      "scoreFragiliteRegion" : "43,82",
+      "codePostal" : "94000"
     },
 
     {
@@ -35,7 +44,10 @@
       "accesInformation" : "60,13",
       "competencesAdmin" : "51,94",
       "usageInterfaceNum" : "63,89",
-      "scoreFragilite" : "65,10"
+      "scoreFragilite" : "65,10",
+      "scoreFragiliteDepartement" : "60,81",
+      "scoreFragiliteRegion" : "31,54",
+      "codePostal" : "78000"
     },
 
     {
@@ -44,7 +56,10 @@
       "accesInformation" : "98,10",
       "competencesAdmin" : "47,33",
       "usageInterfaceNum" : "43,09",
-      "scoreFragilite" : "58,49"
+      "scoreFragilite" : "58,49",
+      "scoreFragiliteDepartement" : "65,97",
+      "scoreFragiliteRegion" : "55,12",
+      "codePostal" : "92000"
     }
 
 
