@@ -3,32 +3,34 @@ const cors = require("cors");
 const {connect} = require('./lib/mongo.config')
 require('dotenv').config()
 const {GreenIT} = require('./model/green_it.model')
+const ObjectID = require('mongoose').Types.ObjectId;
 
 const app = express();
-const PORT = 5500;
+const PORT = 8800;
 
 connect()
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.get('/:id', (req, res) => {
 
-app.post('/',(req,res)=>{
-  const green_it = new GreenIT({
-    ...req.body
-  });
+  if (!ObjectID.isValid(req.params.id)) {
+      return res.status(400).send('L\'object ID is not valid  : ' + req.params.id)
+  }
 
-  green_it.save()
-  .then(() => res.status(201).json('success'))
-  .catch(error => res.status(500).json({error}))
-})
-
-app.get('/', async (req, res)=> {
-  GreenIT.find()
-        .sort({title : 1})
-        .then(data => res.status(200).json(data))
-        .catch(error => res.status(500).json({ error}))
+  //Check if the current object id exists
+  const green_it__id_exists = GreenIT.exists({_id: req.params.id});
+  if (!green_it__id_exists) {
+      return res.status(404).send('object ID not found')
+  }
+  else{
+    GreenIT.findById({_id: req.params.id})
+          .then(data => res.status(200).json(data))
+          .catch(error => res.status(500).json({error}));
+  }
 });
 
 app.listen(PORT, () => {
