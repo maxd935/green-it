@@ -7,16 +7,20 @@ import cities from './data/cities.json'
 
 
 function App() {
-  const [datas, setDatas] = useState([])
-  //const [word, setWord] = useState("");
+  const [datas, setDatas] = useState({})
 
-  /*useEffect(() => {
-    setDatas((data))
-  }, [])*/
   const handleSearch = (value) => {
+    const code = value.split(',')[1].trim()
+    fetch('http://localhost:8800/api/'+code)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        setDatas(data)
+      });
     const resp = data.filter( el => el.Ville.toLocaleLowerCase() === value.toLocaleLowerCase())
         console.log(resp)
-      setDatas(resp)
+      
   }
 
   return (

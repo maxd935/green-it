@@ -3,21 +3,36 @@ import Card from '../components/Card'
 
 function Data ({datas})  {
     console.log("datas ", datas)
-        return (
-            <div style={{marginTop: '20px'}}>
-                <div className="others" style={{width: '100%'}}>
-                    {
-                        datas.map(
-                            (city,k)=>{
-                                return <Card key={k} data={city}/>
+        if(Object.keys(datas).length > 0) {
+            return (
+                <>
+                    <div style={{marginTop: '20px', width: '20%',marginLeft: '10px'}}>
+                        <div className='first'>
+                            <Card  data={datas.ville}/>
+                        </div>
+                    </div>
+
+                    <div style={{marginTop: '20px', width: '100%'}}>
+                        
+                            {
+                                datas.dept.map(
+                                    (city,k)=>{
+                                        return <div className="others" style={{width: '20%', marginLeft: '20px', marginRight: '20px', marginTop: '20px', float: 'left'}}>
+                                            <Card key={k} data={city}/>
+                                        </div>
+                                    }
+                                )
                             }
-                        )
-                    }
                 </div>
 
-            </div>
+                </>
 
-        );
+            );
+        }else {
+            return (
+                <div></div>
+            )
+        }
 
 }
 

@@ -7,8 +7,6 @@ services:
     build: ./node-app
     ports:
       - 8800:8800 # Nous exposons le port 8800
-    depends_on:
-      - mongo
 
   frontend:
     container_name: front-reactjs
@@ -24,14 +22,6 @@ services:
     # # it will start our frontend container once backend-container is  up and running.
     depends_on:
       - backend
-
-  mongo:
-    image: mongo:3.6
-    container_name: db-mongo
-    volumes:
-      - mongo-storage:/data/db # Nous pouvons ajouter un volume à ce container afin de stocker les données de la base
-    ports:
-      - 27017:27017
 
 # Définition des volumes:
 volumes:
