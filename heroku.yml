@@ -1,0 +1,4 @@
+build:
+  docker:
+    frontend: react-app/Dockerfile
+    backend: node-app/Dockerfile
