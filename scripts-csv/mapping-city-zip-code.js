@@ -8,9 +8,7 @@ fs.createReadStream('./csv/cities.csv')
       })
       .on('end', () => {
           resultsCSV = resultsCSV.map( el => {
-              return {
-                  cities:  el.name+", "+el.zip_code
-              }
+              return el.name+", "+el.zip_code
           })
 
           const jsonString = JSON.stringify(resultsCSV)
