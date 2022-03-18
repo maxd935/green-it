@@ -10,7 +10,6 @@ services:
     depends_on:
       - mongo
 
-
   frontend:
     container_name: front-reactjs
     # to build an image based on Dockerfile
