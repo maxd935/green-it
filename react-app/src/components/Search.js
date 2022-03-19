@@ -99,7 +99,7 @@ class Autocomplete extends Component {
         if (showSuggestions && userInput) {
             if (filteredSuggestions.length) {
                 suggestionsListComponent = (
-                    <ul>
+                    <ul style={{backgrounColor: 'red'}}>
                         {filteredSuggestions.map((suggestion, index) => {
                             let className;
 
@@ -127,8 +127,8 @@ class Autocomplete extends Component {
 
         return (
             <Fragment>
-                <div>
-                    <label>
+                <div style={{margin: 'auto', width: '400px'}}>
+                <div style={{textAlign: 'start'}}>
                         <input
                             aria-label="input"
                             type="text"
@@ -136,13 +136,15 @@ class Autocomplete extends Component {
                             onKeyDown={onKeyDown}
                             value={userInput}
                         />
-                    </label>
                     <button
                         onClick={() => this.props.onSearch(userInput)}
                         style={{marginLeft: '10px',height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}>Search</button>
                 </div>
+                <div style={{  maxHeight: '200px',width: '320px',textAlign: "center",
+                 overflowY: 'scroll', border: '1px solid black', borderTopColor: 'white'}}>
                 {suggestionsListComponent}
-
+                </div>
+                </div>
             </Fragment>
         );
     }

@@ -2,7 +2,6 @@ import React from 'react';
 import Card from '../components/Card'
 
 function Data ({datas})  {
-    console.log("datas ", datas)
         if(Object.keys(datas).length > 0) {
             return (
                 <>
@@ -11,7 +10,7 @@ function Data ({datas})  {
                             <Card  data={datas.ville}/>
                         </div>
                     </div>
-
+                    <h2>Résultat des villes voisines</h2>
                     <div style={{marginTop: '20px', width: '100%'}}>
                         
                             {
