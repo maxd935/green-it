@@ -18,9 +18,6 @@ function App() {
       .then(function(data) {
         setDatas(data)
       });
-    const resp = data.filter( el => el.Ville.toLocaleLowerCase() === value.toLocaleLowerCase())
-        console.log(resp)
-      
   }
 
   return (
