@@ -10,8 +10,8 @@ Comment calculer l'indice de fragilité :
 L’unité fonctionnelle sera : la recherche de l’indice de fragilité d’une commune par rapport à son département et sa
 région.
 
-Lien en prod (public) : @@@
-Lien en github (public) : https://github.com/jules3198/green-it 
+Lien en prod (public) : https://green-it-max.herokuapp.com
+Lien du github (public) : https://github.com/jules3198/green-it 
 
 Objectifs
 - [x] Créer un site internet qui permet d’obtenir un indice de fragilité numérique
@@ -43,7 +43,7 @@ sa région
 - GABIAM Jules - julesakouete31@gmail.com 5 IW1
 - MBOMBO MOKONDA Christ - christmokonda@gmail.com 5 IWJ
 
-## Lancement du projet
+## Lancement du projet (local)
 Script Shell de lancement du projet, création et éxéution des dockers, éxécuter la ligne de commande, à la racine du projet :
 ```
 ./lancement-project-docker.sh
