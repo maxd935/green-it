@@ -7,7 +7,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "k6": "^0.0.0",
-    "node-cache": "^5.1.2"
+    "node-cache": "^5.1.2",
+    "puppeteer": "^13.5.1"
   },
   "scripts": {
     "start": "nodemon src/app.js"
