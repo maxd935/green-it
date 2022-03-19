@@ -22,8 +22,3 @@ services:
     # # it will start our frontend container once backend-container is  up and running.
     depends_on:
       - backend
-
-# Définition des volumes:
-volumes:
-  mongo-storage:
-    driver: local
