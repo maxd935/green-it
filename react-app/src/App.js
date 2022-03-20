@@ -58,6 +58,8 @@ function App() {
                             onClick={handleDowload} >Generate Pdf</button>
                 </p>
 
+-               <p>L'indice de fragilité numérique correspond donc à l'illestrime numérique d'un territoire donné</p>
+
 
             </div>
             <Autocomplete

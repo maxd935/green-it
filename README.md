@@ -29,8 +29,21 @@ sa région
 - [x] BONUS : Effectuer des tests de montée en charge avec K6. Indiquez les résultats dans le readme.
 
 ## Choix des tecnhos
-- ReactJS : pourquoi ??
-- NodeJS : ???
+LANGAGE
+- Javascript : Le javascript est un langage plutôt stable, avec un temps d'execution assez rapide et d'une taille assez légère .
+
+BACK
+- NodeJS :
+  Pas de surcouche supplémentaire ou de Framework ( ex : Express ).
+  De la même manière que Javascript , NodeJS est un outil plutôt stable
+
+FRONT
+-  ReactJS :
+   Pas de biblothèque supplémentaire coté front ( ex : Materialize ) . React est une librairie avec une approche basé sur les composants ,
+   qui peuvent être facilement réutilisé dans d'autres projets.
+   Le fait que React soit une librairie et non un framework ( comme Angular ) le rend plus simple a utiliser et surtout moins volumineux.
+
+
 
 ## Vos scores dans les outils de benchmark d’éco-conception
 - https://institutnr.org/outils-ecoconception-accessibilite 
@@ -49,6 +62,7 @@ Script Shell de lancement du projet, création et éxéution des dockers, éxéc
 ./lancement-project-docker.sh
 ```
 Se rendre sur <http://localhost:3000/>
+
 
 ## Lancement des tests de performance avec k6
 
