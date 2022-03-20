@@ -1,17 +1,18 @@
 import React from 'react';
 import Card from '../components/Card'
+import CardRegion from './CardRegion';
 
 function Data ({datas})  {
-    console.log("datas ", datas)
         if(Object.keys(datas).length > 0) {
             return (
                 <>
-                    <div style={{marginTop: '20px', width: '20%',marginLeft: '10px'}}>
-                        <div className='first'>
+                    <div style={{marginTop: '20px',marginLeft: '10px', display: 'flex',justifyContent: 'space-between'}}>
+                        <div style ={{width:'50%'}}className='first'>
                             <Card  data={datas.ville}/>
                         </div>
+                        <CardRegion data={datas.ville}/>
                     </div>
-
+                    <h2>Résultat des villes voisines ({datas.ville.DEP}) </h2>
                     <div style={{marginTop: '20px', width: '100%'}}>
                         
                             {
@@ -23,7 +24,7 @@ function Data ({datas})  {
                                     }
                                 )
                             }
-                </div>
+                    </div>
 
                 </>
 

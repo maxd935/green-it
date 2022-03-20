@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "pdfmake": "^0.2.4",
-    "puppeteer": "^13.5.1"
-  }
-}

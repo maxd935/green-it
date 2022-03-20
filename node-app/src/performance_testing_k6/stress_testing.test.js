@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import {check, sleep, fail, group} from 'k6';
+import {sleep, group} from 'k6';
 
 export const options = {
     stages: [
@@ -12,28 +12,39 @@ export const options = {
         { duration: '2m', target: 400 }, // beyond the breaking point
         { duration: '5m', target: 400 },
         { duration: '10m', target: 0 }, // scale down. Recovery stage.
-    ]
+    ],
+    thresholds: {
+        'group_duration{group:::firstWaveRequests}': ['p(99)<1500'],
+        'group_duration{group:::secondWaveRequests}': ['p(99)<1500'],
+      },
 };
 
 export default function stress_testing(){
 
-    const BASE_URL = "http://localhost:4000/"
+    const BASE_URL = "http://localhost:8800/api"
 
     let requestHeaders = {
         'User-Agent': 'k6',
         'Content-Type': 'application/json',
     };
 
-    let responses = http.batch([
-        { method: 'GET', url: `${BASE_URL}6232f77b924befb4780bf4dc`, params: { headers: requestHeaders } },
-        { method: 'GET', url: `${BASE_URL}62344e6703d839472707011f`, params: { headers: requestHeaders } },
-        { method: 'GET', url: `${BASE_URL}62344e6803d8394727070123`, params: { headers: requestHeaders } },
-        { method: 'GET', url: `${BASE_URL}6232f77b924befb4780bf4dc`, params: { headers: requestHeaders } },
-    ]);
+    group('firstWaveRequests',()=>{
+        http.batch([
+            { method: 'GET', url: `${BASE_URL}94190`, params: { headers: requestHeaders } },
+            { method: 'GET', url: `${BASE_URL}1400`, params: { headers: requestHeaders } },
+            { method: 'GET', url: `${BASE_URL}75007`, params: { headers: requestHeaders } },
+            { method: 'GET', url: `${BASE_URL}75003`, params: { headers: requestHeaders } }
+        ]);
+    })
 
-    /*if(!check(responses, { 'status code should be 200': (r) => r.status === 200})){
-        fail('status code was *not* 200');
-    }*/
+    group('secondWaveRequests',()=>{
+        http.batch([
+            { method: 'GET', url: `${BASE_URL}33000`, params: { headers: requestHeaders } },
+            { method: 'GET', url: `${BASE_URL}77185`, params: { headers: requestHeaders } },
+            { method: 'GET', url: `${BASE_URL}94600`, params: { headers: requestHeaders } },
+            { method: 'GET', url: `${BASE_URL}75012`, params: { headers: requestHeaders } }
+        ]);
+    })
 
     sleep(1);
 }
