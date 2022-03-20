@@ -21,12 +21,12 @@ conclusion
 - [] L’application doit permettre une collecte des résultats agrégés :
     -  [] Pour statistique
     - [] Pour ressortir le résultat plus rapidement si même requête
-- [] L’application doit permettre le choix de la commune par son code postal et/ou l’accès à une liste déroulante
+- [x] L’application doit permettre le choix de la commune par son code postal et/ou l’accès à une liste déroulante
 - [x] L’utilisateur doit avoir accès aux 4 scores de l’indice, du score global ainsi que de ceux de son département et de
 sa région
 - [] Le site doit stocker la requête
-- [] BONUS : Possibilité par le site de télécharger un pdf de présentation du résultat final
-- [] BONUS : Effectuer des tests de montée en charge avec K6. Indiquez les résultats dans le readme.
+- [x] BONUS : Possibilité par le site de télécharger un pdf de présentation du résultat final
+- [x] BONUS : Effectuer des tests de montée en charge avec K6. Indiquez les résultats dans le readme.
 
 ## Choix des tecnhos
 - ReactJS : pourquoi ??
@@ -50,7 +50,43 @@ Script Shell de lancement du projet, création et éxéution des dockers, éxéc
 ```
 Se rendre sur <http://localhost:3000/>
 
-## Lancement des scripts k6
+## Lancement des tests de performance avec k6
+
+### Installation
+Linux
+Debian/Ubuntu
+````
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+sudo apt-get update
+sudo apt-get install k6
+````
+Fedora/CentOS
+````
+sudo dnf install https://dl.k6.io/rpm/repo.rpm
+sudo dnf install k6
+````
+MacOS
+````
+brew install k6
+````
+Windows ( Chocolatey or  Windows Package Manager)
+````
+choco install k6
+````
+````
+winget install k6
+````
+
+### Execute
 ```
 k6 run node-app/src/performance_testing_k6/<script_filename>
 ```
+
+### Résultats K6
+![Rapport](testK6/rapport.png)
+![Load test](testK6/load_testing.png)
+![Soak test](testK6/soak_testing.png)
+![Smoke test](testK6/smoke_testing.png)
+![Spike test](testK6/spike_testing.png)
+![Strees test](testK6/strees_testing.png)
