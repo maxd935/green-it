@@ -30,9 +30,7 @@ function App() {
 
   return (
     <div className="App">
-
             <h1>Indice de fragilité numérique</h1>
-
             <div style={{
                 border: '1px solid black',
                 margin : '10px',
@@ -60,7 +58,7 @@ function App() {
 
 
             </div>
-              <p>Nous proposons de télecharger les résultats en format PDF en cliquant sur son button</p>
+              <p>Nous proposons de télecharger les résultats en format PDF en cliquant sur ce bouton</p>
               <button 
                 style={{height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}
                 onClick={handleDowload}>
