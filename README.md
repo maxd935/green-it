@@ -49,3 +49,8 @@ Script Shell de lancement du projet, création et éxéution des dockers, éxéc
 ./lancement-project-docker.sh
 ```
 Se rendre sur <http://localhost:3000/>
+
+## Lancement des scripts k6
+```
+k6 run node-app/src/performance_testing_k6/<script_filename>
+```

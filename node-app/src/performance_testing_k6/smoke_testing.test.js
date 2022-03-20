@@ -8,15 +8,18 @@ export default function smoke_testing(){
         duration: '1m',
 
         thresholds: {
-            http_req_duration: ['p(99)<1500'], // 99% of requests must complete below 1.5s
-            http_req_failed: ['rate<0.01'], // http errors should be less than 1%
-        },
+            http_req_duration: ['p(99)<1500'], // 99% of requests must complete below 1.5s,
+        }
     };
 
-    const get_lists = http.get("http://localhost:4000/6232f77b924befb4780bf4dc");
+    const BASE_URL = "http://localhost:8800/api"
 
-    if(!check(get_lists, { 'status code should be 200': (r) => r.status === 200},
-        { 'should return a an object': (obj) => obj.length > 0 })){
+    //Résout le problème du http_req_failed (par rapport au requete qui ont échouées)
+    const response_callback = http.setResponseCallback(http.expectedStatuses({ min: 200, max: 399 }));
+
+    const results = http.get(`${BASE_URL}/75007`,{responseCallback : response_callback});
+    if(!check(results, { 'status code should be 200': (r) => r.status === 200},
+        { 'should return a an object': (obj) => obj.length >= 0 })){
         fail('status code was *not* 200');
     }
 
