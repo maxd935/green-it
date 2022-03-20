@@ -1,6 +1,5 @@
 import './App.css';
 import Autocomplete from "./components/Search";
-import data from "./data/data.json";
 import React, {useState} from "react";
 import Data from './components/Data';
 import cities from './data/cities.json'
@@ -8,9 +7,11 @@ import cities from './data/cities.json'
 
 function App() {
   const [datas, setDatas] = useState({})
+  const [code, setCode] = useState("")
 
   const handleSearch = (value) => {
     const code = value.split(',')[1].trim()
+    setCode(code)
     fetch('http://localhost:8800/api/'+code)
       .then(function(response) {
         return response.json();
@@ -18,6 +19,12 @@ function App() {
       .then(function(data) {
         setDatas(data)
       });
+  }
+
+  const handleDowload = () => {
+    console.log(code)
+    fetch('http://localhost:8800/api/pdf/'+code)
+    .then(res => console.log(res))
   }
 
   return (
@@ -47,7 +54,8 @@ function App() {
                     Ce site a éte developpé dans une optique Green IT. <br/>
                     Dans ce cadre , nous proposons de télecharger cette page en format PDF en
                     cliquant sur son button <br/> <br/>
-                            <button style={{height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}>Generate Pdf</button>
+                            <button style={{height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}
+                            onClick={handleDowload} >Generate Pdf</button>
                 </p>
 
 -               <p>L'indice de fragilité numérique correspond donc à l'illestrime numérique d'un territoire donné</p>
