@@ -5,7 +5,7 @@ const response = require('./lib/getData');
 const generatePDF = require('./lib/pdfExport');
 
 const app = express();
-const PORT = 8800;
+const PORT = (process.env.PORT || 5000);
 
 
 app.use(express.json());
