@@ -10,22 +10,22 @@ Comment calculer l'indice de fragilité :
 L’unité fonctionnelle sera : la recherche de l’indice de fragilité d’une commune par rapport à son département et sa
 région.
 
-Lien en prod (public) : https://green-it-max.herokuapp.com
+Lien en prod (public) : https://green-it-front.herokuapp.com/ \
 Lien du github (public) : https://github.com/jules3198/green-it 
 
 Objectifs
 - [x] Créer un site internet qui permet d’obtenir un indice de fragilité numérique
 - [x] L’application doit tenir sur une seule page web
-- [] L’application doit permettre d’introduire l’indice par un texte explicatif et de le terminer sur une phrase de
+- [x] L’application doit permettre d’introduire l’indice par un texte explicatif et de le terminer sur une phrase de
 conclusion
-- [] L’application doit permettre une collecte des résultats agrégés :
-    -  [] Pour statistique
-    - [] Pour ressortir le résultat plus rapidement si même requête
+- [x] L’application doit permettre une collecte des résultats agrégés :
+    -  [x] Pour statistique
+    - [x] Pour ressortir le résultat plus rapidement si même requête
 - [x] L’application doit permettre le choix de la commune par son code postal et/ou l’accès à une liste déroulante
 - [x] L’utilisateur doit avoir accès aux 4 scores de l’indice, du score global ainsi que de ceux de son département et de
 sa région
 - [] Le site doit stocker la requête
-- [x] BONUS : Possibilité par le site de télécharger un pdf de présentation du résultat final
+- [x] BONUS : Possibilité par le site de télécharger un pdf de présentation du résultat final (possible en back mais pas en front)
 - [x] BONUS : Effectuer des tests de montée en charge avec K6. Indiquez les résultats dans le readme.
 
 ## Choix des tecnhos

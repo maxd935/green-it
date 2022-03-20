@@ -13,7 +13,7 @@ export const options = {
 };
 
 export default function load_testing(){
-    const BASE_URL = "http://localhost:8800/api"
+    const BASE_URL = "https://green-it-back.herokuapp.com/api"
     //Résout le problème du http_req_failed (par rapport au requete qui ont échouées)
     const response_callback = http.setResponseCallback(http.expectedStatuses({ min: 200, max: 399 }));
 

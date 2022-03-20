@@ -15,7 +15,7 @@ export const options = {
 
 export default function spike_testing(){
 
-    const BASE_URL = "http://localhost:8800/api"
+    const BASE_URL = "https://green-it-back.herokuapp.com/api"
 
     let requestHeaders = {
         'User-Agent': 'k6',
