@@ -50,6 +50,8 @@ function App() {
                             <button style={{height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}>Generate Pdf</button>
                 </p>
 
+-               <p>L'indice de fragilité numérique correspond donc à l'illestrime numérique d'un territoire donné</p>
+
 
             </div>
             <Autocomplete
