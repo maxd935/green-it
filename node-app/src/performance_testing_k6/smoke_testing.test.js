@@ -12,7 +12,7 @@ export default function smoke_testing(){
         }
     };
 
-    const BASE_URL = "https://green-it-back.herokuapp.com/api"
+    const BASE_URL = "https://green-it-front.herokuapp.com/"
 
     //Résout le problème du http_req_failed (par rapport au requete qui ont échouées)
     const response_callback = http.setResponseCallback(http.expectedStatuses({ min: 200, max: 399 }));

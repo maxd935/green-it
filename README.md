@@ -47,6 +47,11 @@ FRONT
 - https://institutnr.org/outils-ecoconception-accessibilite 
 - https://checklists.opquast.com/en/web-quality-assurance/
 
+### Lighthouse - Chrome
+![lighthouse_Chrome.png](TestPerf/lighthouse_Chrome.png)
+![gtmetrix.png](TestPerf/gtmetrix.png)
+![pagespeed_google.png](TestPerf/pagespeed_google.png)
+
 
 ## Membres de l'équipe
 - DAUDÉ Maxime - mdaude2@myges.fr 5 IWJ
