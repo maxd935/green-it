@@ -1,4 +1,3 @@
 build:
   docker:
-    web: react-app/Dockerfile
-    worker: node-app/Dockerfile
+    web: node-app/Dockerfile
