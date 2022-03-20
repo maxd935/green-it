@@ -1,3 +1,9 @@
+# BUILD BACK
 build:
   docker:
-    web: react-app/Dockerfile
+    web: node-app/Dockerfile
+
+# BUILD FRONT
+# build:
+#   docker:
+#     web: react-app/Dockerfile
