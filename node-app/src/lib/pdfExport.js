@@ -10,7 +10,7 @@ module.exports = async function generatePDF(city) {
   //We start a new browser, without showing UI
   const browser = await puppeteer.launch({ headless: true, slowMo: 50});
   const page = await browser.newPage();
-  const url = 'http://localhost:3000/';
+  const url = 'https://green-it-front.herokuapp.com/';
 
   //We load the page, one of my blog post (networkidle0 means we're waiting for the network to stop making new calls for 500ms
   await page.goto(url, {waitUntil: 'networkidle0'});

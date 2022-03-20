@@ -12,7 +12,7 @@ function App() {
   const handleSearch = (value) => {
     const code = value.split(',')[1].trim()
     setCode(code)
-    fetch('http://localhost:8800/api/'+code)
+    fetch('https://green-it-back.herokuapp.com/api/'+code)
       .then(function(response) {
         return response.json();
       })
@@ -24,7 +24,7 @@ function App() {
   const handleDowload = () => {
     console.log(code)
     alert('Fonction en maintenance')
-    fetch('http://localhost:8800/api/pdf/'+code)
+    fetch('https://green-it-back.herokuapp.com/api/pdf/'+code)
     .then(res => console.log(res))
   }
 
