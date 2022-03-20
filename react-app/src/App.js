@@ -23,6 +23,7 @@ function App() {
 
   const handleDowload = () => {
     console.log(code)
+    alert('Fonction en maintenance')
     fetch('http://localhost:8800/api/pdf/'+code)
     .then(res => console.log(res))
   }
@@ -40,9 +41,12 @@ function App() {
                 <h2>Présentation</h2>
 
                 <p>
-                    Le but de ce projet a pour base les recherches lancés par l'institut du numérique responsable sur la fragilité numérique <br/>
-                    La barre de recherche ci dessous permet de choisir la ville dont on souhaite conaitre l'indice de fragilité numérique. <br/>
-                    Cette indice est calculé à partir de 4 grands axes : <br/> <br/>
+                    Le but de ce projet est de calculer et de comparer l'indice de fragilité numérique des villes de France.<br/>
+                    Projet porté par l'Institut du Numérique Responsable (INR)<br/><br/>
+
+                    L'indice de fragilité numérique correspond à l'illestrime numérique d'un territoire donné.<br/>
+
+                    Cet indice est calculé à partir de 4 indicateurs : <br/> 
                     1. <strong>L'accès à l'information </strong> d'un territoire  <br/>
                     2. <strong>L'accès aux interfaces numériques </strong>  <br/>
                     3. <strong>La capacité d'usage des interfaces numériques </strong>  <br/>
@@ -51,23 +55,24 @@ function App() {
 
 
                 <p>
-                    Ce site a éte developpé dans une optique Green IT. <br/>
-                    Dans ce cadre , nous proposons de télecharger cette page en format PDF en
-                    cliquant sur son button <br/> <br/>
-                            <button style={{height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}
-                            onClick={handleDowload} >Generate Pdf</button>
+                    Ce site a été developpé dans une optique Green IT et respecte l'écoconception.
                 </p>
-
--               <p>L'indice de fragilité numérique correspond donc à l'illestrime numérique d'un territoire donné</p>
 
 
             </div>
-            <Autocomplete
-                suggestions={cities}
-                onSearch={(v) => handleSearch(v)}
-            />
-            <Data datas={datas} />
-    </div>
+              <p>Nous proposons de télecharger les résultats en format PDF en cliquant sur son button</p>
+              <button 
+                style={{height: '33px', backgroundColor: 'blue', color: 'white', border: 'none'}}
+                onClick={handleDowload}>
+                  Generate Pdf
+              </button>
+              <p>La barre de recherche ci-dessous permet de choisir la ville dont on souhaite connaître l'indice de fragilité numérique.</p>
+              <Autocomplete
+                  suggestions={cities}
+                  onSearch={(v) => handleSearch(v)}
+              />
+              <Data datas={datas} />
+            </div>
   );
 }
 

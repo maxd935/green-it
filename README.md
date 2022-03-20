@@ -1,4 +1,4 @@
-# green-it
+# Green IT
 
 Projet web : Calcul et comparateur d'indice de fragilité des villes de France \
 Comment calculer l'indice de fragilité :
@@ -30,19 +30,17 @@ sa région
 
 ## Choix des tecnhos
 LANGAGE
-- Javascript : Le javascript est un langage plutôt stable, avec un temps d'execution assez rapide et d'une taille assez légère .
+- Javascript : Le javascript est un langage stable, avec un temps d'execution rapide et un taux d'énergie faible. Tout le groupe a une forte connaissance sur ce language.
 
 BACK
 - NodeJS :
-  Pas de surcouche supplémentaire ou de Framework ( ex : Express ).
-  De la même manière que Javascript , NodeJS est un outil plutôt stable
+  Utilisation du framework minimaliste ExpressJS, stable et rapide. L'équipe a de bonne connaissance sur ce framwork.
 
 FRONT
 -  ReactJS :
-   Pas de biblothèque supplémentaire coté front ( ex : Materialize ) . React est une librairie avec une approche basé sur les composants ,
+   Pas de biblothèque supplémentaire coté front ( ex : Materialize ). React est une librairie avec une approche basé sur les composants ,
    qui peuvent être facilement réutilisé dans d'autres projets.
    Le fait que React soit une librairie et non un framework ( comme Angular ) le rend plus simple a utiliser et surtout moins volumineux.
-
 
 
 ## Vos scores dans les outils de benchmark d’éco-conception
